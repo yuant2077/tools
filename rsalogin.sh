@@ -1,5 +1,5 @@
 wget https://github.com/yuant2077/tools/raw/main/ssh.pub
-cat ssh.pub >> ~/.ssh/authorized_keys
+mkdir -p ~/.ssh && cat ssh.pub >> ~/.ssh/authorized_keys
 sed -i 's/^.*PasswordAuthentication.*/PasswordAuthentication no/g' /etc/ssh/sshd_config && \
 sed -i 's/^.*PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config && \
 sed -i 's/^.*RSAAuthentication.*/RSAAuthentication yes/g' /etc/ssh/sshd_config && \
